@@ -1,0 +1,110 @@
+.admin-container {
+    @include grid(1fr 4fr , 2rem);
+    height: 100vh;
+    background-color: rgb(247, 247, 247);
+    > aside {
+      width: 100%;
+      background-color: white;
+      padding: 1rem;
+      z-index: 10;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+  
+      > div {
+        margin: 2rem 1rem;
+        > h5 {
+          @include heading(2px);
+          opacity: 0.8;
+          margin: 1rem 0;
+        }
+        > ul {
+          @include flex(column, unset, unset, 0.5rem);
+          list-style: none;
+          > li {
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            a {
+              color: rgba(0, 0, 0, 0.825);
+              @include flex(row, unset);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .phone-active {
+        width: 20rem;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: all 0.5s;
+  }
+
+  .show-modal {
+    left: -20rem;
+  }
+
+
+  .active-link {
+    @include bgColor(rgba(0,115,255,0.1));
+   }
+ 
+   .inactive-link{
+     @include bgColor($white);
+   }
+ 
+   .active-link-text{
+     @include textColor(rgb(0,115,255) !important);
+    }
+  
+    .inactive-link-text{
+      @include textColor($dark);
+    }
+ 
+
+  #hamburger{
+    display: flex;
+    place-items: center;
+    @include square(3rem);
+    border:none;
+    outline: none;
+    cursor: pointer;
+    color: rgba(44,104,255);
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 9;
+    @include boxShadow();
+    @include square(3rem);
+    @include rounded;
+
+    > svg {
+      margin: 0 auto; 
+      path {
+        stroke-width: 1px;
+      }
+    }
+   
+  }
+
+  #close-sidebar{
+    width: 80%;
+    margin: 1rem auto;
+    display: block;
+    padding: 0.75rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(168 , 2 , 2);
+    color: white;
+    border-radius: 10px;
+  }
+
