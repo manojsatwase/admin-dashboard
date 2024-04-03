@@ -54,20 +54,27 @@ a{
     }
   }
 
- 
-  .error-page{
-    @include flexCenter;
-    min-height: 100vh;
-    font-size: 1.1rem;
-    > div {
-        @include textAlign(center);
-        > p{
-           font-weight: bold;
-           font-size: 1.2rem;
-           margin-top: 1rem;
-           @include textColor($yellow);
-        }
+  .error-message {
+    position: relative;
+    text-align: center;
+    @include positionCenter;
+    @include textColor($primary);
+    >  .error-text {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8); 
+      padding: 10px;
+      font-size: 1.1rem;
+      animation: fadeInOut 3s infinite;
     }
+    
+  }
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
   }
 
   button{
