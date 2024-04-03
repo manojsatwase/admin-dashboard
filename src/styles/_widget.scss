@@ -1,0 +1,70 @@
+   // widget
+    
+   .widget-container{
+    @include flex(row,space-between,stretch,2rem);
+    padding: 2rem 2rem 2rem 0;
+    overflow-x: auto;
+    // margin-right: 1.5rem; // if widet.length > 4 then add this class
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 7px;
+      }
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        margin-right: 2rem;
+        margin-left: 0.5rem;
+      }
+    &::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 5px; 
+      }
+
+    .widget-item{
+        width: 16rem;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0 , 0 , 0, 0.132);
+        padding: 2rem;
+        border-radius: 10px;
+        @include flex(row,space-between,stretch,0);
+
+        .widget-info{
+            > p {
+                opacity: 0;
+                font-size: 0.8rem;
+            }
+            > h4 {
+                font-size: 1.5rem;
+            }
+            > span {
+               @include flex(row, unset, center,0.2rem) 
+            }
+            
+        }
+        .green{
+            @include textColor($dark_green);
+        }
+        .red{
+            @include textColor($danger);
+        }
+        
+    }
+    .widget-circle{
+     position: relative; // parent position relative
+     @include square(5rem);
+     border-radius: 50%;
+     display: grid;
+     place-items: center;
+     background-color: rgb(205, 198, 198);
+     &::before{
+        content: "";
+        position: absolute; // before parent position absolute
+        @include square(4rem);
+        background-color: white;
+        border-radius: 100%;
+     }
+     span{
+        position: relative; // child position relative
+     }
+    }
+  }
