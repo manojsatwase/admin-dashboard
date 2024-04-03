@@ -1,6 +1,6 @@
-import {  useState } from "react"
+import {  useState } from "react";
 
-import AdminSidebar from "../../components/admin/AdminSidebar"
+import AdminSidebar from "../../components/admin/AdminSidebar";
 
 const NewProduct = () => {
     const [name,setName] = useState("");

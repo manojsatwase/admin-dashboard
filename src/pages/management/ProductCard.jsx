@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 // Name could be ProductCard or OrderItemCard
 const ProductCard = ({name,photo,price,quantity,_id}) => (
